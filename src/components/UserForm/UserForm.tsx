@@ -10,7 +10,7 @@ const UserForm: React.FC<Props> = ({onSubmitFormToAddUser}) => {
     name: '',
     email: '',
     active: false,
-    role: 'User',
+    role: 'Role',
   };
 
   const [form, setForm] = useState<UserMutation>(initialFormState);
@@ -33,7 +33,7 @@ const UserForm: React.FC<Props> = ({onSubmitFormToAddUser}) => {
 
   return (
     <form onSubmit={onSubmit}>
-      <h4>User form</h4>
+      <h4>User Form</h4>
       <hr/>
       <div className="form-group">
         <label htmlFor="name">Name</label>
@@ -44,6 +44,7 @@ const UserForm: React.FC<Props> = ({onSubmitFormToAddUser}) => {
           className="form-control"
           value={form.name}
           onChange={inputChangeHandler}
+          required
         />
       </div>
 
@@ -56,12 +57,14 @@ const UserForm: React.FC<Props> = ({onSubmitFormToAddUser}) => {
           className="form-control"
           value={form.email}
           onChange={inputChangeHandler}
+          required
         />
       </div>
 
-      <div className="form-group">
+      <div className="form-group mt-3">
         <label htmlFor="active">Active</label>
         <input
+          className="ms-2"
           type="checkbox"
           id="active"
           checked={form.active}
@@ -69,10 +72,11 @@ const UserForm: React.FC<Props> = ({onSubmitFormToAddUser}) => {
         />
       </div>
 
-      <div className="form-group">
+      <div className="form-group mt-3">
         <select name="role"
                 value={form.role}
                 onChange={inputChangeHandler}>
+          <option disabled value="Role">Role</option>
           <option value="User">User</option>
           <option value="Editor">Editor</option>
           <option value="Admin">Admin</option>

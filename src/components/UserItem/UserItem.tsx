@@ -8,17 +8,20 @@ num: number;
 
 const UserItem: React.FC<Props> = ({user, num}) => {
 
-  const style = {
-    marginLeft: '30px',
+  let activeStatus = '';
+  if (user.active) {
+    activeStatus = 'Active';
+  } else {
+    activeStatus = 'No Active';
   }
 
   return (
     <tr>
-      <th  scope="row">{num}</th>
-      <td style={style}>{user.name}</td>
+      <th scope="row">{num}</th>
+      <td >{user.name}</td>
       <td>{user.email}</td>
       <td>{user.role}</td>
-      <td>{user.active}</td>
+      <td>{activeStatus}</td>
     </tr>
   );
 };

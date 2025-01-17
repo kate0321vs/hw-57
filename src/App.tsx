@@ -20,26 +20,31 @@ const App = () => {
       </header>
       <main className="container">
         <div className="row">
-          <div className="col-4">
+          <div className="col-6">
             <UserForm onSubmitFormToAddUser={addUser}/>
           </div>
-          <div className="col-4">
-            <table className="table table-striped">
-              <thead>
-              <tr>
-                <th scope="col">#</th>
-                <th scope="col">Name</th>
-                <th scope="col">Email</th>
-                <th scope="col">Role</th>
-                <th scope="col">Active</th>
-              </tr>
-              </thead>
-              <tbody>
-              {users.map((user, index) => (
-                <UserItem user={user} num={index + 1}/>
-              ))}
-              </tbody>
-            </table>
+          <div className="col-6">
+            <h4>Users</h4>
+            <hr/>
+            {users.length === 0 ? <p>No Added Users</p> :
+              <>
+                <table className="table table-striped">
+                  <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Role</th>
+                    <th scope="col">Active</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  {users.map((user, index) => (
+                    <UserItem user={user} num={index + 1}/>
+                  ))}
+                  </tbody>
+                </table>
+              </>}
           </div>
         </div>
       </main>
