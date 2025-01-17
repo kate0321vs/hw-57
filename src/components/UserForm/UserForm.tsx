@@ -27,7 +27,6 @@ const UserForm: React.FC<Props> = ({onSubmitFormToAddUser}) => {
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     onSubmitFormToAddUser({id: String(new Date().toISOString()), ...form});
-    console.log(form);
     setForm(initialFormState)
   }
 
@@ -57,7 +56,6 @@ const UserForm: React.FC<Props> = ({onSubmitFormToAddUser}) => {
           className="form-control"
           value={form.email}
           onChange={inputChangeHandler}
-          required
         />
       </div>
 

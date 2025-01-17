@@ -10,7 +10,6 @@ const App = () => {
 
   const addUser = (newUser: User) => {
     setUsers(prevUser => [...prevUser, newUser]);
-    console.log(users)
   }
 
   return (

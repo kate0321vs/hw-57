@@ -1,4 +1,4 @@
-import UserItem from '../UserItem/UserItem.tsx';
+import UserItem from './UserItem/UserItem.tsx';
 import { User } from '../../types';
 import * as React from 'react';
 
