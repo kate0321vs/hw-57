@@ -10,7 +10,7 @@ const UserForm: React.FC<Props> = ({onSubmitFormToAddUser}) => {
     name: '',
     email: '',
     active: false,
-    role: 'Role',
+    role: 'User',
   };
 
   const [form, setForm] = useState<UserMutation>(initialFormState);
@@ -75,8 +75,9 @@ const UserForm: React.FC<Props> = ({onSubmitFormToAddUser}) => {
       <div className="form-group mt-3">
         <select name="role"
                 value={form.role}
-                onChange={inputChangeHandler}>
-          <option disabled value="Role">Role</option>
+                onChange={inputChangeHandler}
+                required>
+          <option disabled>Role</option>
           <option value="User">User</option>
           <option value="Editor">Editor</option>
           <option value="Admin">Admin</option>
