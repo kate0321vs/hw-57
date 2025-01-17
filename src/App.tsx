@@ -9,7 +9,7 @@ const App = () => {
   const [users, setUsers] = useState<User[]>([]);
 
   const addUser = (newUser: User) => {
-    setUsers(prevUser => [newUser, ...prevUser]);
+    setUsers(prevUser => [...prevUser, newUser]);
     console.log(users)
   }
 
@@ -24,7 +24,7 @@ const App = () => {
             <UserForm onSubmitFormToAddUser={addUser}/>
           </div>
           <div className="col-6">
-            <Users users={users} />
+            <Users users={users}/>
           </div>
         </div>
       </main>
